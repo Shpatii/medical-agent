@@ -1,0 +1,80 @@
+const chatInput = document.querySelector(".chat-input textarea");
+const sendChatBtn = document.querySelector(".chat-input span");
+const chatBox = document.querySelector(".chatbox");
+
+let userMessage;
+const API_KEY = "3f1d2e92dc0b8b966c0342a81dc6dd508f5d44883a22d5a09aaad63a01add0e3"; 
+const API_URL = "https://api.together.xyz/v1/chat/completions";
+const inputInitHeight = chatInput.scrollHeight;
+
+const createChatLi = (message, className) => {
+    const chatLi = document.createElement("li");
+    chatLi.classList.add("chat", className);
+    let chatContent = className === "outgoing"
+        ? `<p></p>`
+        : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+    chatLi.innerHTML = chatContent;
+    chatLi.querySelector("p").textContent = message;
+    return chatLi;
+};
+
+const generateResponse = (incomingChatLi) => {
+    const messageElement = incomingChatLi.querySelector("p");
+
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}`
+        },
+        body: JSON.stringify({
+            model: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo", 
+            messages: [{ role: "user", content: userMessage }],
+            temperature: 0.7,
+            max_tokens: 512
+        })
+    };
+
+    fetch(API_URL, requestOptions)
+        .then(res => res.json())
+        .then(data => {
+            const responseMessage = data.choices?.[0]?.message?.content || "No response received.";
+            messageElement.textContent = responseMessage;
+        })
+        .catch((error) => {
+            console.error("API error:", error);
+            messageElement.textContent = "❌ Something went wrong. Please try again.";
+        })
+        .finally(() => chatBox.scrollTo(0, chatBox.scrollHeight));
+};
+
+const handleChat = () => {
+    userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+
+    chatInput.value = "";
+    chatInput.style.height = `${inputInitHeight}px`;
+
+    chatBox.appendChild(createChatLi(userMessage, "outgoing"));
+    chatBox.scrollTo(0, chatBox.scrollHeight);
+
+    setTimeout(() => {
+        const incomingChatLi = createChatLi("Thinking...", "incoming");
+        chatBox.appendChild(incomingChatLi);
+        generateResponse(incomingChatLi);
+    }, 600);
+};
+
+chatInput.addEventListener("input", () => {
+    chatInput.style.height = `${inputInitHeight}px`;
+    chatInput.style.height = `${chatInput.scrollHeight}px`;
+});
+
+chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        handleChat();
+    }
+});
+
+sendChatBtn.addEventListener("click", handleChat);

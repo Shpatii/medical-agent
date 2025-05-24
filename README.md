@@ -3,6 +3,10 @@
 Make sure you have all libs and dependecies installed if not run this command:
 'pip install -r requirements.txt'
 
+Sometimes you have to install flask manually with the following command:
+"pip install flask-cors python-dotenv langchain langchain-together PyPDF2: 
+
+
 ---
 
 ## How to Run
@@ -10,15 +14,20 @@ Make sure you have all libs and dependecies installed if not run this command:
 1. Run this command as administrator first:
 "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned"
 
-2. Now open a new powershell/terminal and run this command:
+2.Start Venv Folder
+"python -m venv venv"
+
+3. Now open a new powershell/terminal and run this command:
 ".\venv\Scripts\Activate.ps1"
 
-3. After venv is running in that same powershell/terminal run the app
+4. After venv is running in that same powershell/terminal run the app
 "python main.py"
 
-4. After Flask is up and running simply open/run the index.html file and you're good to go
+5. After Flask is up and running simply open/run the index.html file and you're good to go
 
-5. Ctrl + C on the terminal to stop Flask if needed
+6. Ctrl + C on the terminal to stop Flask if needed
+
+To test the Agent use one of the 2 files that are in this repository
 
 <!-- Rrespekte nga Shpati -->
 
