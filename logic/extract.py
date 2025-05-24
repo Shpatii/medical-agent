@@ -33,17 +33,20 @@ Do NOT include:
 - Observations like “he was able to…” or “he was unable to…”
 - General mental capacity evaluations unless directly tied to a medical diagnosis
 
-Format for each event:
+And respond strictly in this format for each event:
 - Date: [e.g., 2015-06-20 or November 2010]
 - Treater: [Doctor or Hospital]
 - Diagnosis: [Confirmed medical diagnosis]
 - Treatment: [Optional if mentioned]
 - Notes: [Only essential notes linked to the diagnosis]
+ONLY Return 4-5 Events not one more 
 
 TEXT:
 {medical_notes}
 
 Return only relevant filtered events, clean and non-repetitive.
+
+
 
 """
 )
@@ -61,7 +64,7 @@ def extract_text_from_pdf(file_path):
 # Medical chronology (chunked)
 def generate_medical_chronology(text):
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=5000,
+        chunk_size=14000,
         chunk_overlap=200
     )
 
@@ -75,7 +78,15 @@ def generate_medical_chronology(text):
         try:
             result = chain.invoke({"medical_notes": chunk})
             print(f"[SERVER] Chunk {i+1} result: {result[:200]}...")
-            results.append(result)
+
+            # ✅ Only keep chunks that look like valid medical events
+            if all(k in result for k in ["Date:", "Diagnosis:", "Treater:"]):
+                results.append(result)
+            else:
+                print(f"[SERVER] Chunk {i+1} skipped — missing required fields.")
+
+            time.sleep(2)  # respect rate limits
+
         except Exception as e:
             print(f"[SERVER] ERROR in chunk {i+1}: {str(e)}")
 

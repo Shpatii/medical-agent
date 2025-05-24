@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Chronology AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .hero {
+      background: linear-gradient(to right, #0d6efd, #6ea8fe);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .info-section {
+      padding: 50px 20px;
+      background-color: #f9f9f9;
+    }
+    .features {
+      padding: 50px 20px;
+    }
+    .features .card {
+      transition: transform 0.2s;
+    }
+    .features .card:hover {
+      transform: scale(1.03);
+    }
+    footer {
+      background-color: #f1f1f1;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">MedChronoAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://127.0.0.1:5000">Try Agent</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1 class="display-4 fw-bold">Medical Chronology AI</h1>
+    <p class="lead">Extract clinical events from legal-medical PDF reports with AI.</p>
+    <a href="http://127.0.0.1:5000" class="btn btn-light btn-lg mt-3">Try Our Agent</a>
+  </div>
+
+  <!-- Info Section -->
+  <div class="info-section text-center">
+    <div class="container">
+      <h2>About This Project</h2>
+      <p class="mt-3 fs-5">
+        This tool reads medical PDF documents and summarizes events like diagnoses, treatment dates, and the attending doctors or hospitals. It filters out noise like opinions, symptoms, and legal boilerplate.
+      </p>
+    </div>
+  </div>
+
+  <!-- Feature Cards Section -->
+  <div class="features">
+    <div class="container">
+      <h2 class="text-center mb-5">Key Features</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995475.png" class="card-img-top p-4" alt="PDF Analysis" style="max-height: 180px; object-fit: contain;">
+            <div class="card-body">
+              <h5 class="card-title">PDF to Timeline</h5>
+              <p class="card-text">Automatically extract and structure medical events from scanned or digital PDF documents.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/3771/3771317.png" class="card-img-top p-4" alt="AI Filtering" style="max-height: 180px; object-fit: contain;">
+            <div class="card-body">
+              <h5 class="card-title">Intelligent Filtering</h5>
+              <p class="card-text">Removes irrelevant information like opinions or vague statements, giving you only what matters.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm h-100 text-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png" class="card-img-top p-4" alt="Ready to Use" style="max-height: 180px; object-fit: contain;">
+            <div class="card-body">
+              <h5 class="card-title">Export-Ready Summaries</h5>
+              <p class="card-text">Summaries are clean and structured — ready for legal, insurance, or administrative use.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2025 MedChronoAI. Built with ❤️ during a Hackathon.
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
