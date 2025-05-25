@@ -10,20 +10,6 @@ body,html{
 body{
     background-color: #cfcfcf;
 }
-nav {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 8%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-    color: #fff;
-    font-weight: 600;
-}
 .imgg{
     margin-left: 20px;
 }

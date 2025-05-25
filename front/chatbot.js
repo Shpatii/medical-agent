@@ -29,7 +29,10 @@ const generateResponse = (incomingChatLi) => {
         },
         body: JSON.stringify({
             model: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo", 
-            messages: [{ role: "user", content: userMessage }],
+            messages: [
+             { role: "system", content: "You are a medical assistant trained to answer clinical questions. You will give recommendations on what kind of sickness the user may have based on their symptoms. Avoid rare diseases, and dont answer other questions only medical related. Reply in short messages 5-13 sentences maximum. You strictly have to respond only to medical questions you will NOT answer other questions" },
+             { role: "user", content: userMessage }
+    ],
             temperature: 0.7,
             max_tokens: 512
         })

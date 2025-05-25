@@ -14,7 +14,7 @@ Sometimes you have to install flask manually with the following command:
 1. Run this command as administrator first:
 "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned"
 
-2.Start Venv Folder
+2.Start Venv Folder (if needed , if you see a venv folder then just skip this step)
 "python -m venv venv"
 
 3. Now open a new powershell/terminal and run this command:
