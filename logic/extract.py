@@ -38,7 +38,7 @@ And respond strictly in this format for each event:
 - Treater: [Doctor or Hospital]
 - Diagnosis: [Confirmed medical diagnosis]
 - Treatment: [Optional if mentioned]
-- Notes: [Only essential notes linked to the diagnosis]
+- Notes: [Only essential notes linked to the diagnosis, Notes should be 8-10 words maximum not one more]
 ONLY Return 4-5 Events not one more 
 
 TEXT:
@@ -64,7 +64,7 @@ def extract_text_from_pdf(file_path):
 # Medical chronology (chunked)
 def generate_medical_chronology(text):
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=25000,
+        chunk_size=27000,
         chunk_overlap=200
     )
 

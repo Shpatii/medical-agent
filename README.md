@@ -1,10 +1,10 @@
 ## Requirements
 
-Make sure you have all libs and dependecies installed if not run this command:
-'pip install -r requirements.txt'
+1. Make sure you have all libs and dependecies installed if not run this command:
+   'pip install -r requirements.txt'
 
-Sometimes you have to install flask manually with the following command:
-"pip install flask-cors python-dotenv langchain langchain-together PyPDF2: 
+2. Sometimes you have to install flask manually with the following command:
+   "pip install flask-cors python-dotenv langchain langchain-together PyPDF2"
 
 
 ---

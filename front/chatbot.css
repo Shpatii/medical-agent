@@ -43,7 +43,9 @@ nav ul li a {
 nav ul li a:hover{
     color: rgb(0, 174, 255);
 }
-
+.bomboclat{
+    margin-top: 2%;
+}
 
 .col{
     border: #ffffff 2px solid;
@@ -51,7 +53,6 @@ nav ul li a:hover{
 }
 
 .container{
-    margin-top: 5%;
     color: #fff;
 }
 
@@ -66,7 +67,7 @@ nav ul li a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(0, 153, 255);
+    background: #00C8FF;
     border-radius: 50%;
     outline: none;
 }
@@ -88,7 +89,7 @@ nav ul li a:hover{
     pointer-events: none;
     left: 0;
     right: 0;
-    margin: 10% auto 0 ; 
+    margin: 3% auto 0 ; 
 }
 .show-chatbot .chatbot{
     transform: scale(1);
@@ -100,7 +101,7 @@ nav ul li a:hover{
 }
 
 .chatbot header{
-    background-color: #0084ff;
+    background-color: #00C8FF;
     padding: 16px 0;
     text-align: center;
     position: relative;
@@ -134,7 +135,7 @@ nav ul li a:hover{
 .chatbox .incoming span{
     height: 32px ;
     width: 32px;
-    background: #00a2ff;
+    background: #00C8FF;
     color: #fff;
     text-align: center;
     line-height: 32px;
@@ -151,7 +152,7 @@ nav ul li a:hover{
     font-size: 0.95rem;
   padding: 12px 16px;
   border-radius: 10px 10px 0 10px;
-  background: #008cff;
+  background: #00C8FF;
 }
 .chatbox .incoming p{
     color: #171515;
@@ -184,7 +185,7 @@ nav ul li a:hover{
     align-self: flex-end;
     height: 55px;
     line-height: 55px;
-    color: #0099ff;
+    color: #00C8FF;
     font-size: 1.35rem;
     cursor: pointer;
     visibility: hidden;
@@ -206,16 +207,6 @@ a{
     color: #fff;
 }
 
-::-webkit-scrollbar{
-    width: 15px;
-  }
-  ::-webkit-scrollbar-track{
-     background: #01a2ff7a;
-  }
-  ::-webkit-scrollbar-thumb{
-     background: #00aeff;
-     border-radius: 15px;
-  }
 
 
 @media (max-width: 960px) {
