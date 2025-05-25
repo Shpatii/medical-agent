@@ -27,7 +27,7 @@
 
 6. Ctrl + C on the terminal to stop Flask if needed
 
-To test the Agent use one of the 2 files that are in this repository
+To test the Agent use one of the 2 files that are in this repository inside the folder /uploads
 
 <!-- Rrespekte nga Shpati -->
 
