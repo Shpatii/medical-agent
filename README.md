@@ -29,5 +29,4 @@
 
 To test the Agent use one of the 2 files that are in this repository inside the folder /uploads
 
-<!-- Rrespekte nga Shpati -->
 

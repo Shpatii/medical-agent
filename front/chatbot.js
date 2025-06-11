@@ -3,7 +3,7 @@ const sendChatBtn = document.querySelector(".chat-input span");
 const chatBox = document.querySelector(".chatbox");
 
 let userMessage;
-const API_KEY = "3f1d2e92dc0b8b966c0342a81dc6dd508f5d44883a22d5a09aaad63a01add0e3"; 
+const API_KEY = "a1de3b108b6fb3c9865b6f9ac66f11b7882385284d47fbb5a421bf435c809e35"; 
 const API_URL = "https://api.together.xyz/v1/chat/completions";
 const inputInitHeight = chatInput.scrollHeight;
 
