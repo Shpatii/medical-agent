@@ -1,9 +1,14 @@
+
+## THIS PROJECT ONLY WORKS IF YOU DOWNLOAD IT AS A ZIP FILE!!!!!
+
 ## Requirements
 
-1. Make sure you have all libs and dependecies installed if not run this command:
+1. Make sure Python is installed in your machine
+
+2. Make sure you have all libs and dependecies installed if not run this command:
    'pip install -r requirements.txt'
 
-2. Sometimes you have to install flask manually with the following command:
+3. Sometimes you have to install flask manually with the following command:
    "pip install flask-cors python-dotenv langchain langchain-together PyPDF2"
 
 
@@ -30,3 +35,4 @@
 To test the Agent use one of the 2 files that are in this repository inside the folder /uploads
 
 
+## THIS PROJECT ONLY WORKS IF YOU DOWNLOAD IT AS A ZIP FILE!!!!!
