@@ -64,7 +64,7 @@ def extract_text_from_pdf(file_path):
 # Medical chronology (chunked)
 def generate_medical_chronology(text):
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=27000,
+        chunk_size=50000,
         chunk_overlap=200
     )
 

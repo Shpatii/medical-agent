@@ -51,7 +51,14 @@
 <div class="container">
   <h2 class="mb-4">🧠 Extracted Medical Chronology</h2>
   <pre>{{ summary }}</pre>
+
+    <form action="/download/json" method="post">
+  <input type="hidden" name="summary" value="{{ summary | tojson | safe }}">
+  <button type="submit" class="btn btn-success mt-3">⬇️ Download as JSON</button>
+</form>
+
   <a href="http://127.0.0.1:5500/front/index.html" class="btn btn-outline-primary mt-3">⬅ Back to Upload</a>
+
 </div>
 
 </body>

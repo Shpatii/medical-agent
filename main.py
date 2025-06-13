@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, make_response
 from flask_cors import CORS
 import os
 from logic.extract import extract_text_from_pdf, generate_medical_chronology
@@ -30,6 +30,14 @@ def upload_file():
 
     except Exception as e:
         return f"Server Error: {str(e)}", 500
+
+@app.route("/download/json", methods=["POST"])
+def download_json():
+    summary = request.form["summary"]
+    response = make_response(summary)
+    response.headers["Content-Disposition"] = "attachment; filename=summary.json"
+    response.mimetype = "application/json"
+    return response
 
 if __name__ == "__main__":
     app.run(debug=True)
