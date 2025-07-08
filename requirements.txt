@@ -7,3 +7,4 @@ langchain-community==0.0.30
 langchain-together==0.0.3
 together==0.2.10
 requests==2.31.0
+django==5.2.4
