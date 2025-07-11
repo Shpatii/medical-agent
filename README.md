@@ -6,7 +6,7 @@
 2. Make sure you have all libs and dependecies installed if not run this command:
    'pip install -r requirements.txt'
 
-3. Sometimes you have to install some dependicies manually with the following command:
+3. After that you have to install some dependicies manually with the following command:
    "pip install python-dotenv langchain langchain-together PyPDF2"
 
 
@@ -15,7 +15,7 @@
 ## How to Run
 
 1. Run this command on terminal first:
-"Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned"
+"Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy z"
 
 2.Start Venv Folder (if needed , if you see a venv folder then just skip this step)
 "python -m venv venv"

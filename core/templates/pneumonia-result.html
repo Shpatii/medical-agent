@@ -1,28 +1,53 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Detection Result</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .card {
+      border: none;
+      border-radius: 2rem;
+      background: white;
+      box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.05);
+    }
+
+    .badge-label {
+      font-size: 1.25rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 1rem;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #0d6efd;
+      color: white;
+    }
+  </style>
 </head>
-<body style="font-family: sans-serif; padding: 2rem;">
-  
+<body>
+
   <div class="container py-5">
     <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card shadow-lg rounded-4">
-          <div class="card-body p-5 text-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg">
+          <div class="card-body text-center p-5">
             <h2 class="mb-4">📋 Detection Result</h2>
 
             {% if result.error %}
-              <div class="alert alert-danger">
+              <div class="alert alert-danger fs-5">
                 {{ result.error }}
               </div>
             {% else %}
               <h3 class="mb-3">
-                <span class="badge fs-5">
+                <span class="badge bg-primary badge-label text-light">
                   {{ result.label }}
                 </span>
               </h3>
@@ -32,7 +57,9 @@
               </p>
             {% endif %}
 
-            <a href="{% url 'pneumonia_page' %}" class="btn btn-outline-primary mt-4">← Analyze Another X-ray</a>
+            <a href="{% url 'pneumonia_page' %}" class="btn btn-outline-primary mt-4 px-4 py-2 rounded-pill">
+              ← Analyze Another X-ray
+            </a>
           </div>
         </div>
       </div>
@@ -40,3 +67,4 @@
   </div>
 
 </body>
+</html>
