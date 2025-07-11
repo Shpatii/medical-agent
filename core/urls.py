@@ -8,4 +8,7 @@ urlpatterns = [
     path('upload/', views.upload_form, name='upload'),
     path("upload/submit/", views.upload_file, name="upload_file"),  # for POST: handle the file
     path('chatbot/', views.chatbot, name='chatbot'),
+
+    path('pneumonia/', views.pneumonia_page, name='pneumonia_page'),
+    path('pneumonia/detect/', views.upload_xray, name='detect_pneumonia'),
 ] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
