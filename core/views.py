@@ -1,12 +1,13 @@
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse, HttpResponse
+from django.conf import settings
 from .logic.extract import extract_text_from_pdf, generate_medical_chronology
 from .logic.pneumonia_detector import detect_pneumonia_local
 
 import os
 
-UPLOAD_FOLDER = "core/uploads"
+UPLOAD_FOLDER = settings.MEDIA_ROOT  
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def upload_form(request):
@@ -48,11 +49,11 @@ def download_json(request):
     return HttpResponse("Method Not Allowed", status=405)
 
 # ----------------------------
-# ✅ PNEUMONIA DETECTION VIEWS
+# Pneumonia detector
 # ----------------------------
 
 def pneumonia_page(request):
-    return render(request, "pneumonia-upload.html")  # Will be created in Step 4
+    return render(request, "pneumonia-upload.html")  
 
 @csrf_exempt
 def upload_xray(request):
@@ -61,12 +62,15 @@ def upload_xray(request):
         if not image:
             return HttpResponse("No image uploaded", status=400)
 
-        file_path = os.path.join(UPLOAD_FOLDER, image.name)
+        file_path = os.path.join(settings.MEDIA_ROOT, image.name)
         with open(file_path, "wb+") as destination:
             for chunk in image.chunks():
-                destination.write(chunk)
+                destination.write(chunk) 
 
         result = detect_pneumonia_local(file_path)  
 
-        os.remove(file_path)
-        return render(request, "pneumonia-result.html", {"result": result})
+        image_url = settings.MEDIA_URL + image.name  # <-- this line matters
+        return render(request, "pneumonia-result.html", {
+    "result": result,
+    "image_path": image_url
+})

@@ -129,3 +129,11 @@ STATICFILES_DIRS = [
 ]
 
 TEMPLATES[0]['DIRS'] = [BASE_DIR / 'core' / 'templates']
+
+import os
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'core/uploads')

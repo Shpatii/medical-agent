@@ -9,7 +9,14 @@
 3. After that you have to install some dependicies manually with the following command:
    "pip install python-dotenv langchain langchain-together PyPDF2"
 
+4.If you're on Windows, and encounter missing packages (especially torch, transformers, etc.), also run:
+   "pip install python-dotenv langchain langchain_together PyPDF2"
+   "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu"
+   "pip install transformers"
 
+## INSTALL ALL OF THIS INSIDE THE VENV 
+
+# Documentation is Rusty
 ---
 
 ## How to Run
@@ -17,7 +24,7 @@
 1. Run this command on terminal first:
 "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy z"
 
-2.Start Venv Folder (if needed , if you see a venv folder then just skip this step)
+2.Start Venv Folder (if needed , if you see a venv folder then delete it and downloand it again)
 "python -m venv venv"
 
 3. Now run this command:
