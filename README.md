@@ -1,40 +1,39 @@
 
 ## Requirements
-
 1. Make sure Python is installed in your machine
 
-2. Make sure you have all libs and dependecies installed if not run this command:
+2. If you see a venv folder DELETE IT and then go into venv again from your terminal with the following commands:
+   "Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy z"
+
+3. Start Venv Folder at the same terminal
+   "python -m venv venv"
+
+4. Now run this command:
+   ".\venv\Scripts\Activate.ps1"
+
+5. Make sure you have all libs and dependecies installed inside the venv run this command:
    'pip install -r requirements.txt'
 
-3. After that you have to install some dependicies manually with the following command:
+6. After that you have to install some dependicies manually with the following command:
    "pip install python-dotenv langchain langchain-together PyPDF2"
 
-4.If you're on Windows, and encounter missing packages (especially torch, transformers, etc.), also run:
+7. Then again you have to download some libs (especially torch, transformers, etc.), also run:
+   "pip install django"
    "pip install python-dotenv langchain langchain_together PyPDF2"
    "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu"
    "pip install transformers"
 
 ## INSTALL ALL OF THIS INSIDE THE VENV 
 
-# Documentation is Rusty
 ---
 
 ## How to Run
 
-1. Run this command on terminal first:
-"Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy z"
-
-2.Start Venv Folder (if needed , if you see a venv folder then delete it and downloand it again)
-"python -m venv venv"
-
-3. Now run this command:
-".\venv\Scripts\Activate.ps1"
-
-4. After venv is running in that same powershell/terminal run the app
+1. After venv is running in that same powershell/terminal run the app
 "python manage.py runserver"
 
-5. After Django is up and running simply go to your browser and go at https://www.news-medical.net/health/What-is-Viral-Pneumonia.aspx
+2. After Django is up and running simply go to your browser and go at 
 
-6. Ctrl + C on the terminal to stop Flask if needed
+3. Ctrl + C on the terminal to stop Django if needed
 
-To test the Agent use one of the 2 files that are in this repository inside the folder /uploads
+4. To test the Agents use the files and images inside the medical-agent folder each photo or file will be named according to the agent 

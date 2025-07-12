@@ -70,11 +70,12 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.05);
     }
   </style>
+  <link rel="icon" type="image/png" href="{% static 'Group 3.png' %}">
 </head>
 <body>
 
   <div class="result-box">
-    <h2>🩻 Detection Result</h2>
+    <h2>Detection Result</h2>
 
     {% if result.error %}
       <p class="result-label red">{{ result.error }}</p>
@@ -120,7 +121,6 @@
       center: ritKosovo,
     });
 
-    // Blue marker: RIT Kosovo
     new google.maps.Marker({
       position: ritKosovo,
       map: map,
@@ -129,11 +129,12 @@
     });
 
     const hospitals = [
-      { name: "Spitali Amerikan Prishtinë", lat: 42.661301, lng: 21.165514 },
-      { name: "QKUK", lat: 42.663387, lng: 21.150987 },
-      { name: "QMF 1", lat: 42.661625, lng: 21.172566 },
-      { name: "QMF 2", lat: 42.653487, lng: 21.157670 },
-      { name: "QMF 3", lat: 42.673416, lng: 21.145206 },
+      { name: "Spitali Amerikan Prishtinë", lat: 42.64269, lng: 21.15796 },
+      { name: "QMF 5", lat: 42.65261, lng: 21.15755 },
+      { name: "QKUK", lat: 42.64359, lng: 21.16084 },
+      { name: "QMF 6", lat: 42.65048, lng: 21.17123 },
+      { name: "QMF 1", lat: 42.87741, lng: 20.86031 },
+      { name: "QMF 2", lat: 42.67010, lng: 21.16244 },
     ];
 
     hospitals.forEach(h => {

@@ -4,6 +4,8 @@ from django.http import JsonResponse, HttpResponse
 from django.conf import settings
 from .logic.extract import extract_text_from_pdf, generate_medical_chronology
 from .logic.pneumonia_detector import detect_pneumonia_local
+from PIL import Image
+from .logic.skin_detect import classify_image 
 
 import os
 
@@ -74,3 +76,23 @@ def upload_xray(request):
     "result": result,
     "image_path": image_url
 })
+    
+# ----------------------------
+# Skin cancer detector
+# ----------------------------
+
+
+
+@csrf_exempt
+def skin_classifier(request):
+    label = None
+    confidence = None
+
+    if request.method == 'POST' and request.FILES.get("image"):
+        image = Image.open(request.FILES["image"]).convert("RGB")
+        label, confidence = classify_image(image)
+
+    return render(request, "skin_detect.html", {
+        "label": label,
+        "confidence": confidence
+    })
